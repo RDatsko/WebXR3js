@@ -80,7 +80,7 @@ This is the main application function.  It is used to hold the application and e
 	const app = new App();
 	await app.init();
 	app.start();
-	
+
 	...
  }
 ```
@@ -109,7 +109,9 @@ Creating assets and adding them to the scene is easy and can be done in two line
 	scene.add(person);
 ```
 
-You can replace the `new Model` name with whatever type of asset you want to use`new Audio`, `new Image`, `new Model`, or `new Video`.
+The first line defines the variable for creation and what it will create using the `new function(~)` You can replace the `new function(~)` name with whatever type of asset you want to use`new Audio`, `new Image`, `new Model`, or `new Video`. The variable name does not have to be the same as the name defined in the assets tag.  In this example it uses the same name just for simplicity of coding.
+
+The second line just simply adds the created asset to the *scene*.  *scene* is a predefined variable and is what is used when accessin things in the scene.
 
 
 
