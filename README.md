@@ -11,7 +11,7 @@ Basic features include easy loading of models, images, media, movement, etc.
 ### Basic Example
 This is a basic example to show how to load a model into the world using WebXR3js
 
-```
+```javascript
  <script src="webxr3.js" type="module"></script>
  <script type="module">
 
@@ -58,7 +58,7 @@ Assets are easily stored an an *assets* variable using a javascript array struct
 
 The reason for this is so that you don't have to use *assets.assetName* when creating the asset using the `= new function(assetName);` Otherwise you would have to use `= new function(assets.assetName);`.  It's just mainly used for convienence and looking pretty.
 
-```
+```javascript
 const assets = {
 	assetName1: { src: 'file1.ext' },
 	assetName2: { src: 'file2.ext' },
@@ -75,7 +75,7 @@ The **assetName** is what will be used when going to create an asset using the `
 ###Create the Application
 This is the main application function.  It is used to hold the application and execute the code.
 
-```
+```javascript
  async function main() {
 	const app = new App();
 	await app.init();
@@ -84,7 +84,7 @@ This is the main application function.  It is used to hold the application and e
 ```
 The following code just checks if there is an error and if there is one, reports it to the browser.
 
-```
+```javascript
  main().catch((err) => {
     console.error(err);
  })
@@ -99,7 +99,7 @@ The following code just checks if there is an error and if there is one, reports
 
 Creating assets and adding them to the scene is easy and can be done in two lines. Of course you can have other options and functions that can be used to set the position, rotation and such to do more things.  But for the example we are just adding a hall and a person into the hall.
 
-```
+```javascript
 	const hall = new Model(hall);
 	scene.add(hall);
 
