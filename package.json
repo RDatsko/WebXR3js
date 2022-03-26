@@ -1,34 +1,27 @@
 {
   "name": "webxr3js",
-  "version": "22.3.21",
-  "description": "A simple WebXR wrapper for three.js",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "help": "rollup --help",
-    "version": "rollup --version",
-    "minify": "rollup --config ./config/rollup.minify.js",
     "build": "rollup --config ./config/rollup.config.js --environment NODE_ENV:production",
-    "server": "smallserver",
-    "minifyJS": "uglifyjs ./build/webxr3.js --compress --mangle --warn --output ./build/webxr3.min.js",
-    "production": "npm run minifyJS --silent",
- 	"mini": "npm run build && npm run minifyJS --silent"
+	"minify": "rollup --config ./config/rollup.minify.js",
+	"minifyJS": "uglifyjs ./build/webxr3.js --compress --mangle --warn --output ./build/webxr3.min.js",
+	"mini": "npm run build && npm run minifyJS --silent"
   },
   "keywords": [],
-  "author": "Ryan Datsko",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "@rollup/plugin-replace": "^2.3.4",
-    "dayjs": "^1.9.7",
-    "rollup": "^2.70.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "small-static-server": "^1.0.3"
+    "rollup": "^2.70.1"
   },
   "dependencies": {
-    "rollup-plugin-node-resolve": "^5.2.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "three": "^0.139.0",
     "uglify-js": "^3.15.3"
   }
