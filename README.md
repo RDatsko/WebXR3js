@@ -12,10 +12,8 @@ Basic features include easy loading of models, images, media, movement, etc.
 This is a basic example to show how to load a model into the world using WebXR3js
 
 ```html
- <script src="webxr3.js" type="module"></script>
- <script type="module">
- import { App, camera, scene, Model } from './webxr3.js';
-
+ <script src="webxr3.js"></script>
+ <script>
 /* Assets go here
  * ================================================== */
  const asset = {
@@ -28,14 +26,16 @@ This is a basic example to show how to load a model into the world using WebXR3j
 /* Application goes here
  * ================================================== */
  async function main() {
-	const app = new App();
+	const app = new W3.App();
+	let scene = W3.scene;
+
 	await app.init();
 	app.start();
 
-	const hall = new Model(asset.hall);
+	const hall = new W3.Model("hall");
 	scene.add(hall);
 
-	const hall = new Model(asset.person);
+	const hall = new W3.Model("person");
 	scene.add(person);
  }
 
@@ -46,9 +46,6 @@ This is a basic example to show how to load a model into the world using WebXR3j
 ```
 
 Call the **webxr3.js** script file and then start your code either using an external javascript file or inside the html like in this example.  
-Notice the **module** tag in both scripts.  
-Also, make sure to copy the import line. This iport line makes it easier to use the code.  
-If you are putting the webxr3.js file in the same director as your html file, include the "./" in front of the webxr3.js.  For information about some of the usage in which can be used, check the details of the usage befow.
 
 
 
@@ -56,9 +53,7 @@ If you are putting the webxr3.js file in the same director as your html file, in
 
 <br/><br/>
 ### Adding Assets
-Assets are easily stored as an *assets* variable using a javascript array structure.  This variable **MUST** be named *assets* to correctly work when creating the asset.
-
-The reason for this is so that you don't have to use *assets.assetName* when creating the asset using the `= new function(assetName);` Otherwise you would have to use `= new function(assets.assetName);`.  It's just mainly used for convienence and looking pretty.
+Assets are easily stored as an *asset* variable using a javascript array structure.  This variable **MUST** be named *asset* in order to creating the asset.
 
 ```javascript
 const asset = {
@@ -67,7 +62,7 @@ const asset = {
 };
 ```
 
-The **assetName** is what will be used when going to create an asset using the `new function(asset.assetName);` command where function is one of the assigned asset controllers `Audio`, `Image`, `Model`, `Video`.
+The **assetName** is what will be used when going to create an asset using the `new W3.function("assetName");` command where function is one of the assigned asset controllers `W3.Audio`, `W3.Image`, `W3.Model`, `W3.Video`.
 
 
 
@@ -75,11 +70,13 @@ The **assetName** is what will be used when going to create an asset using the `
 
 <br/><br/>
 ### Create the Application
-This is the main application function.  It is used to hold the application and execute the code.
+This is the main application function.  It is used to hold the application and execute the code.  The objects using this wrapper uses `W3` before the object. The `let scene = W3.scene` is not necessary.  It is used here so that scene can be called when making changes in the scene. Otherwise all calls to the scene would require `W3.scene`.
 
 ```javascript
  async function main() {
-	const app = new App();
+	const app = new W3.App();
+	let scene = W3.scene;
+
 	await app.init();
 	app.start();
 
@@ -101,19 +98,19 @@ The following code just checks if there is an error and if there is one, reports
 <br/><br/>
 ### Adding Assets
 
-Creating assets and adding them to the scene is easy and can be done in two lines. Of course you can have other options and functions that can be used to set the position, rotation and such to do more things.  But for the example we are just adding a hall and a person into the hall.
+Creating assets and adding them to the scene is easy and can be done in two lines. Of course you can have other options and functions that can be used to set the position, rotation, and such, to do more things.  But for this example we are just adding a hall and a person into the hall.
 
 ```javascript
-	const hall = new Model(asset.hall);
+	const hall = new W3.Model("hall");
 	scene.add(hall);
 
-	const person = new Model(asset.person);
+	const person = new W3.Model("person");
 	scene.add(person);
 ```
 
-The first line defines the variable for creation and what it will create using the `new function(~)` You can replace the `new function(~)` name with whatever type of asset you want to use`new Audio`, `new Image`, `new Model`, or `new Video`. The variable name does not have to be the same as the name defined in the assets tag.  In this example it uses the same name just for simplicity of coding.
+The first line defines the variable for creation and what it will create using the `new W3.function(~)` You can replace the `new W3.function(~)` name with whatever type of asset you want to use`new W3.Audio`, `new W3.Image`, `new W3.Model`, or `new W3.Video`. The variable name does not have to be the same as the name defined in the assets tag.  In this example it uses the same name just for simplicity of coding.
 
-The second line just simply adds the created asset to the *scene*.  *scene* is a predefined variable and is what is used when accessin things in the scene.
+The second line just simply adds the created asset to the *scene* variable. 
 
 
 

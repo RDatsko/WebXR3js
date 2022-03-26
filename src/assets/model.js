@@ -92,12 +92,12 @@ class Model extends THREE.Group {
     constructor(data) {
         super();
 
-//        let assetName = eval("asset." + data);
+        let assetName = eval("asset." + data);
 //        let rtnName = assetName.src;
 //        alert(assetName);
-//        this.modelUrl = assetName.src
+        this.modelUrl = assetName.src
 
-        this.modelUrl = data.src;
+//        this.modelUrl = data.src;
 
         this.onCreate();
 
