@@ -14,10 +14,11 @@ This is a basic example to show how to load a model into the world using WebXR3j
 ```html
  <script src="webxr3.js" type="module"></script>
  <script type="module">
+ import { App, camera, scene, Model } from './webxr3.js';
 
 /* Assets go here
  * ================================================== */
- const assets = {
+ const asset = {
 	hall: { src: 'hall.glb' },
 	person: { src: 'person.glb' }
  };
@@ -31,10 +32,10 @@ This is a basic example to show how to load a model into the world using WebXR3j
 	await app.init();
 	app.start();
 
-	const hall = new Model(hall);
+	const hall = new Model(asset.hall);
 	scene.add(hall);
 
-	const hall = new Model(person);
+	const hall = new Model(asset.person);
 	scene.add(person);
  }
 
@@ -46,7 +47,8 @@ This is a basic example to show how to load a model into the world using WebXR3j
 
 Call the **webxr3.js** script file and then start your code either using an external javascript file or inside the html like in this example.  
 Notice the **module** tag in both scripts.  
-For information about some of the usage in which can be used, check the details of the usage befow.
+Also, make sure to copy the import line. This iport line makes it easier to use the code.  
+If you are putting the webxr3.js file in the same director as your html file, include the "./" in front of the webxr3.js.  For information about some of the usage in which can be used, check the details of the usage befow.
 
 
 
@@ -59,13 +61,13 @@ Assets are easily stored as an *assets* variable using a javascript array struct
 The reason for this is so that you don't have to use *assets.assetName* when creating the asset using the `= new function(assetName);` Otherwise you would have to use `= new function(assets.assetName);`.  It's just mainly used for convienence and looking pretty.
 
 ```javascript
-const assets = {
+const asset = {
 	assetName1: { src: 'file1.ext' },
 	assetName2: { src: 'file2.ext' },
 };
 ```
 
-The **assetName** is what will be used when going to create an asset using the `new function(assetName);` command where function is one of the assigned asset controllers `Audio`, `Image`, `Model`, `Video`.
+The **assetName** is what will be used when going to create an asset using the `new function(asset.assetName);` command where function is one of the assigned asset controllers `Audio`, `Image`, `Model`, `Video`.
 
 
 
@@ -102,10 +104,10 @@ The following code just checks if there is an error and if there is one, reports
 Creating assets and adding them to the scene is easy and can be done in two lines. Of course you can have other options and functions that can be used to set the position, rotation and such to do more things.  But for the example we are just adding a hall and a person into the hall.
 
 ```javascript
-	const hall = new Model(hall);
+	const hall = new Model(asset.hall);
 	scene.add(hall);
 
-	const hall = new Model(person);
+	const person = new Model(asset.person);
 	scene.add(person);
 ```
 

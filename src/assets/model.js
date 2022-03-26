@@ -92,9 +92,12 @@ class Model extends THREE.Group {
     constructor(data) {
         super();
 
-        this.modelUrl = data.src;
+//        let assetName = eval("asset." + data);
+//        let rtnName = assetName.src;
+//        alert(assetName);
+//        this.modelUrl = assetName.src
 
-//        this.modelUrl = '//cdn.wtlstudio.com/common-ptr.wtlstudio.com/5f6458c8-2d5e-49ee-846f-49561e17e351.glb';
+        this.modelUrl = data.src;
 
         this.onCreate();
 
