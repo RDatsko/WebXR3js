@@ -1,7 +1,7 @@
 # WebXR3js
 WebXR3js is a three.js wrapper to make programing XR stuff for the web simple.
 
-Basic features include easy loading of models, images, movement, etc.
+Basic features include easy loading of models, images, media, movement, etc.
 
 
 
@@ -19,7 +19,7 @@ This is a basic example to show how to load a model into the world using WebXR3j
  * ================================================== */
  const assets = {
 	hall: { src: 'hall.glb' },
-	person: { src: 'person' }
+	person: { src: 'person.glb' }
  };
 
 
