@@ -11,7 +11,7 @@ Basic features include easy loading of models, images, media, movement, etc.
 ### Basic Example
 This is a basic example to show how to load a model into the world using WebXR3js
 
-```javascript
+```html
  <script src="webxr3.js" type="module"></script>
  <script type="module">
 
