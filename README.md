@@ -54,7 +54,7 @@ For information about some of the usage in which can be used, check the details 
 
 <br/><br/>
 ### Adding Assets
-Assets are easily stored an an *assets* variable using a javascript array structure.  This variable **MUST** be named *assets* to correctly work when creating the asset.
+Assets are easily stored as an *assets* variable using a javascript array structure.  This variable **MUST** be named *assets* to correctly work when creating the asset.
 
 The reason for this is so that you don't have to use *assets.assetName* when creating the asset using the `= new function(assetName);` Otherwise you would have to use `= new function(assets.assetName);`.  It's just mainly used for convienence and looking pretty.
 
