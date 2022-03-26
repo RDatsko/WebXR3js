@@ -18,10 +18,6 @@ import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 // Constrols
 import { createControls } from './systems/controls.js';
 
-
-
-
-
 let camera;
 let controls;
 let renderer;
@@ -31,26 +27,25 @@ let loop;
 let container;
 
 class App {
-    constructor() {
-        camera = new Camera();
-        renderer = createRenderer();
-        scene = new World();
-        loop = new Loop(camera, scene, renderer);
-
+	constructor() {
+		camera = new Camera();		
+		renderer = createRenderer();
+		scene = new World();
+		loop = new Loop(camera, scene, renderer);
+		
         container = document.querySelector('#xrscene');
         container.append(renderer.domElement);
 
-        controls = createControls(camera, renderer.domElement);
+		controls = createControls(camera, renderer.domElement);
 
-        const { ambientLight, mainLight } = createLights();
+		const { ambientLight, mainLight } = createLights();
 
-        loop.updatables.push(controls);
-        scene.add(ambientLight, mainLight);
+		loop.updatables.push(controls);
+		scene.add(ambientLight, mainLight);
 
-        const resizer = new Resizer(container, camera, renderer);
-    }
-
-    async init() {
+		const resizer = new Resizer(container, camera, renderer);
+	}
+	    async init() {
         this.setupXR();
     }
 
@@ -83,9 +78,4 @@ class App {
 //    }
 }
 
-// OK, but can only have one export
-//export default App;
-
-// Broken using {}
 export { App, camera, scene, Model };
-
