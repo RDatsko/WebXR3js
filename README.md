@@ -80,6 +80,8 @@ This is the main application function.  It is used to hold the application and e
 	const app = new App();
 	await app.init();
 	app.start();
+	
+	...
  }
 ```
 The following code just checks if there is an error and if there is one, reports it to the browser.
