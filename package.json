@@ -8,8 +8,11 @@
     "help": "rollup --help",
     "version": "rollup --version",
     "minify": "rollup --config ./config/rollup.minify.js",
-    "build": "rollup --config ./config/rollup.js --environment NODE_ENV:production",
-    "server": "smallserver"
+    "build": "rollup --config ./config/rollup.config.js --environment NODE_ENV:production",
+    "server": "smallserver",
+    "minifyJS": "uglifyjs ./build/webxr3.js --compress --mangle --warn --output ./build/webxr3.min.js",
+    "production": "npm run minifyJS --silent",
+ 	"mini": "npm run build && npm run minifyJS --silent"
   },
   "keywords": [],
   "author": "Ryan Datsko",
@@ -26,6 +29,7 @@
   },
   "dependencies": {
     "rollup-plugin-node-resolve": "^5.2.0",
-    "three": "^0.139.0"
+    "three": "^0.139.0",
+    "uglify-js": "^3.15.3"
   }
 }

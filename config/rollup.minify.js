@@ -10,14 +10,14 @@ const
   dev = (process.env.NODE_ENV !== 'production'),
   sourcemap = dev ? 'inline' : false,
 
-  input = './src/main-replace.js',
+  input = './src/index.js',
 
   watch = { clearScreen: false },
 
   tokens = {
-    __CLOCKSELECTOR__: '.clock',
-    __CLOCKINTERVAL__: 1000,
-    __CLOCKFORMAT__: 'formatHMS'
+//    __CLOCKSELECTOR__: '.clock',
+//    __CLOCKINTERVAL__: 1000,
+///    __CLOCKFORMAT__: 'formatHMS'
   };
 
 console.log(`running in ${ dev ? 'development' : 'production' } mode`);
@@ -30,17 +30,17 @@ export default [
     watch,
 
     plugins: [
-      replace({
-        ...tokens,
-        __POLYFILL__: '' // no polyfill for ES6
-      }),
+//      replace({
+//        ...tokens,
+//        __POLYFILL__: '' // no polyfill for ES6
+//      }),
       resolve({ browser: true }),
       commonjs()
     ],
 
     output: {
-      file: './build/bundle.mjs',
-      format: 'iife',
+      file: './build/webxr3.min.mjs',
+      format: 'es',
       sourcemap,
       plugins: [
         terser({
@@ -53,7 +53,8 @@ export default [
             drop_console: !dev,
             drop_debugger: !dev
           },
-          output: { quote_style: 1 }
+          output: { quote_style: 1 },
+//          transforms: { asyncAwait: false },
         })
       ]
     }
@@ -66,18 +67,18 @@ export default [
     watch,
 
     plugins: [
-      replace({
-        ...tokens,
-        __POLYFILL__: "import './lib/polyfill.js';" // ES5 polyfill
-      }),
+//      replace({
+//        ...tokens,
+//        __POLYFILL__: "import './lib/polyfill.js';" // ES5 polyfill
+//      }),
       resolve({ browser: true }),
       commonjs(),
       buble()
     ],
 
     output: {
-      file: './build/bundle.js',
-      format: 'iife',
+      file: './build/webxr3.min.js',
+      format: 'es',
       sourcemap,
       plugins: [
         terser({
@@ -88,7 +89,8 @@ export default [
             drop_console: !dev,
             drop_debugger: !dev
           },
-          output: { quote_style: 1 }
+          output: { quote_style: 1 },
+//          transforms: { asyncAwait: false },
         })
       ]
     }
