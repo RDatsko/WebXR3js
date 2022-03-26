@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebXR Three JS Wrapper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="xrscene"></div>
+
+<script src="webxr3.js" type="module"></script>
+<script type="module">
+import * as XR from './webxr3.js';
+
+/* Assets go here
+ * ================================================== */
+const _hall = { src: "hall.glb" };
+
+
+
+
+
+/* Application goes here
+ * ================================================== */
+
+ async function main() {
+    const app = new XR.App();
+    app.init();
+    await app.start();
+
+    const hall = new XR.Model(_hall);
+    XR.scene.add(hall);
+}
+
+main().catch((err) => {
+    console.error(err);
+})
+</script>
+</body>
+</html>
