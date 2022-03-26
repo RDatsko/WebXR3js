@@ -41,7 +41,7 @@ export default [
     output: {
       file: './build/webxr3.min.mjs',
       format: 'iife',
-		  name: 'W3',
+		name: 'W3',
 	sourcemap,
       plugins: [
         terser({
@@ -80,7 +80,7 @@ export default [
     output: {
       file: './build/webxr3.min.js',
       format: 'iife',
-	    name: 'W3',
+	  name: 'W3',
       sourcemap,
       plugins: [
         terser({

@@ -5,7 +5,7 @@ export default {
   output: {
     file: './build/webxr3.js',
     format: 'iife',
-	  name: 'W3',
+	name: 'W3',
     sourcemap: 'inline'
   },
   plugins: [
