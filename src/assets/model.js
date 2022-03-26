@@ -50,6 +50,44 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 //export { loadBirds };
 //export { setupModel };
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function getFullName(name) {
+	let assetName = eval("assets." + name);
+	let rtnName = assetName.firstName + " " + assetName.lastName;
+	return rtnName;
+}
+
+const assets = {
+	person1: { firstName: "John", lastName: "Doe", age: 46 },
+	person2: { firstName: "Jane", lastName: "Smith", age: 42 }
+};
+
+let testName = getFullName("person1");
+
+document.getElementById("demo").innerHTML += testName + "<br>";
+*/
+
+
+
+
+
+
+
+
+
+
 class Model extends THREE.Group {
     constructor(data) {
         super();

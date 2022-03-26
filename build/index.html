@@ -12,11 +12,13 @@
 
 <script src="webxr3.js" type="module"></script>
 <script type="module">
-import * as w3 from './webxr3.js';
+import { App, Model, scene } from './webxr3.js';
 
 /* Assets go here
  * ================================================== */
-const _hall = { src: "hall.glb" };
+const asset = {
+    hall: { src: "hall.glb" }
+};
 
 
 
@@ -26,12 +28,12 @@ const _hall = { src: "hall.glb" };
  * ================================================== */
 
  async function main() {
-    const app = new w3.App();
+    const app = new App();
     app.init();
     await app.start();
 
-    const hall = new w3.Model(_hall);
-    w3.scene.add(hall);
+    const hall = new Model(asset.hall);
+    scene.add(hall);
 }
 
 main().catch((err) => {

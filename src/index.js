@@ -87,5 +87,5 @@ class App {
 //export default App;
 
 // Broken using {}
-export { App, scene, Model };
+export { App, camera, scene, Model };
 
