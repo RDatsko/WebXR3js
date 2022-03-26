@@ -1,0 +1,31 @@
+{
+  "name": "webxr3js",
+  "version": "22.3.21",
+  "description": "A simple WebXR wrapper for three.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "help": "rollup --help",
+    "version": "rollup --version",
+    "minify": "rollup --config ./config/rollup.minify.js",
+    "build": "rollup --config ./config/rollup.js --environment NODE_ENV:production",
+    "server": "smallserver"
+  },
+  "keywords": [],
+  "author": "Ryan Datsko",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "@rollup/plugin-replace": "^2.3.4",
+    "dayjs": "^1.9.7",
+    "rollup": "^2.70.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "small-static-server": "^1.0.3"
+  },
+  "dependencies": {
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "three": "^0.139.0"
+  }
+}
