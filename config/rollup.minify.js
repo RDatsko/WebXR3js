@@ -40,8 +40,9 @@ export default [
 
     output: {
       file: './build/webxr3.min.mjs',
-      format: 'es',
-      sourcemap,
+      format: 'iife',
+		name: 'W3',
+	sourcemap,
       plugins: [
         terser({
           ecma: 2018,
@@ -78,7 +79,8 @@ export default [
 
     output: {
       file: './build/webxr3.min.js',
-      format: 'es',
+      format: 'iife',
+	  name: 'W3',
       sourcemap,
       plugins: [
         terser({

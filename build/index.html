@@ -2,17 +2,31 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>WebXR Three JS Wrapper</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="./styles.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+<title>WebXR3js Wrapper</title>
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+#xrscene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: skyblue;
+}
+
+</style>
+
 </head>
 <body>
-
 <div id="xrscene"></div>
 
-<script src="webxr3.min.js" type="module"></script>
-<script type="module">
-import { App, camera, scene, Model } from './webxr3.min.js';
+<script src="webxr3.js"></script>
+<script>
+
+//W3.Test();
 
 /* Assets go here
  * ================================================== */
@@ -23,22 +37,27 @@ const asset = {
 
 
 
-
 /* Application goes here
  * ================================================== */
 
- async function main() {
-    const app = new App();
+async function main() {
+    const app = new W3.App();
+	let scene = W3.scene;
+
     await app.init();
     app.start();
 
-    const hall = new Model(asset.hall);
+    const hall = new W3.Model(asset.hall);
     scene.add(hall);
 }
+
+
 
 main().catch((err) => {
     console.error(err);
 })
+
 </script>
+
 </body>
 </html>

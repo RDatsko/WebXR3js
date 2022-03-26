@@ -13,7 +13,6 @@ export { createCamera };
 class Camera extends PerspectiveCamera {
     constructor() {
         super();
-
         this.onCreate();
     }
 
