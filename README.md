@@ -72,8 +72,7 @@ The **assetName** is what will be used when going to create an asset using the `
 
 
 <br/><br/>
-###Create the Application
-
+### Create the Application
 This is the main application function.  It is used to hold the application and execute the code.
 
 ```javascript
